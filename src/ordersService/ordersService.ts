@@ -1,19 +1,16 @@
 import * as express from 'express';
 import {Router, Request, Response } from "express";
-import axios from 'axios';
-import mongoose from 'mongoose';
-import {db} from '../../server';
-import Product from '../dataModels/product';
+import Order from  '../dataModels/order';
 
 const router: Router = express.Router();
 
 router.get('/all', async (req: Request, res: Response) => {
     try {
-        const products = await Product.find({});
+        const orders = await Order.find({});
 
-        res.status(200).json(products);
+        res.status(200).json(orders);
     } catch (err: any) {
-        console.error(err);
+        console.error(err.message);
         res.status(500).json({error: 'Internal server error'});
     }
 });

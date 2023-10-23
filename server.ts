@@ -1,8 +1,8 @@
 import * as express from 'express';
 import axios from 'axios';
 import * as cors from 'cors';
-import productsRouter from './src/productsService/products';
-import ordersRouter from './src/ordersService/orders';
+import productsRouter from './src/productsService/productsService';
+import ordersRouter from './src/ordersService/ordersService';
 import userDataRouter from './src/userService/userData';
 import authControllerRouter from './src/authService/authController';
 import cartRouter from './src/cartService/cartService';
