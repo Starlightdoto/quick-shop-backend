@@ -1,8 +1,10 @@
-const express = require('express');
-const router = express.Router();
+import * as express from 'express';
+import {Router, Request, Response } from "express";
 
-router.get('/all', (req, res) => {
+const router: Router = express.Router();
+
+router.get('/all', (req: Request, res: Response) => {
     res.status(200).json({message: "You have reached orders API"});
 });
 
-module.exports = router;
+export default router;
