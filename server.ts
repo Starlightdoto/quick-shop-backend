@@ -7,13 +7,14 @@ import userDataRouter from './src/userService/userData';
 import authControllerRouter from './src/authService/authController';
 import cartRouter from './src/cartService/cartService';
 import mongoose from 'mongoose';
+require('dotenv').config();
 
 
 const app = express();
-const PORT = 3001;
-const DB_NAME = 'quick-shop-db-main';
-const DB_USERNAME = 'floodofkappa';
-const DB_PASSWORD = 'hOUGf27PzWJ8ckI5';
+const PORT = process.env.PORT;
+const DB_NAME = process.env.DB_NAME;
+const DB_USERNAME = process.env.DB_USERNAME;
+const DB_PASSWORD = process.env.DB_PASSWORD;
 
 
 app.use(express.json());
@@ -37,6 +38,6 @@ db.once('open', () => {
 });
 
 
-app.listen(3001, () => {
+app.listen(PORT || 3001, () => {
     console.log(`Server is running on port ${PORT}`);
 });
