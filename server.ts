@@ -13,6 +13,7 @@ const app = express();
 const PORT = 3001;
 const DB_NAME = 'quick-shop-db-main';
 
+
 app.use(express.json());
 app.use(cors());
 
@@ -24,7 +25,7 @@ app.use('/api/auth', authControllerRouter);
 app.use('/api/orders', ordersRouter);
 app.use('/api/cart', cartRouter);
 
-mongoose.connect(`mongodb://localhost:27017/${DB_NAME}`);
+mongoose.connect(`mongodb+srv://floodofkappa:hOUGf27PzWJ8ckI5@cluster0.7sh1hv2.mongodb.net/?retryWrites=true&w=majority`);
 
 export const db = mongoose.connection;
 
