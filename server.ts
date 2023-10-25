@@ -12,6 +12,8 @@ import mongoose from 'mongoose';
 const app = express();
 const PORT = 3001;
 const DB_NAME = 'quick-shop-db-main';
+const DB_USERNAME = 'floodofkappa';
+const DB_PASSWORD = 'hOUGf27PzWJ8ckI5';
 
 
 app.use(express.json());
@@ -25,7 +27,7 @@ app.use('/api/auth', authControllerRouter);
 app.use('/api/orders', ordersRouter);
 app.use('/api/cart', cartRouter);
 
-mongoose.connect(`mongodb+srv://floodofkappa:hOUGf27PzWJ8ckI5@cluster0.7sh1hv2.mongodb.net/?retryWrites=true&w=majority`);
+mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.7sh1hv2.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`);
 
 export const db = mongoose.connection;
 
